@@ -5,6 +5,7 @@ class CreateListItems < ActiveRecord::Migration[5.1]
       t.string :priority
       t.string :description
       t.string :achieved
+      t.belongs_to :user, index: true
 
       t.timestamps
     end

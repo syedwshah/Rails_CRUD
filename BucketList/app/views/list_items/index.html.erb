@@ -1,0 +1,12 @@
+<h2>Bucket List</h2>
+
+<% if @items.empty? %>
+  No items
+
+<% else %>
+  <ul>
+    <% @items.each do |item| %>
+      <li><%= link_to item.name, list_item_path(item) %></li>
+    <% end %>
+  </ul>
+<% end %>

@@ -9,6 +9,39 @@
   </head>
 
   <body>
+    <div class="header">Bucket List</div>
+
+    <% if current_user %>
+      <%= link_to current_user.username, user_path(current_user) %> signed in
+      <%= button_to 'Log out', session_path, method: :delete %>
+    <% end %>
+
+    <% if flash[:notice].present? %>
+      <div class="notice">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+    <% if flash[:error].present? %>
+      <div class="errors">
+        <b>Errors:</b>
+
+        <%= flash[:error] %>
+      </div>
+    <% end %>
+
     <%= yield %>
+
+
+    <% if current_user %>
+      <br><br>
+      <%= link_to 'Users', users_path %>
+      |
+      <%= link_to 'Bucket List', list_items_path %>
+      |
+      <%= link_to 'Create Item', new_list_item_path %>
+    <% end %>
+
+    <div class="footer"></div>
   </body>
 </html>

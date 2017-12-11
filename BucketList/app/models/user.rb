@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  PASSWORD_LENGTH = (6..25)
-  USERNAME_LENGTH = (5..15)
+  PASSWORD_LENGTH = (4..25)
+  USERNAME_LENGTH = (4..15)
 
   validates_presence_of :username
   validates_presence_of :password_digest
