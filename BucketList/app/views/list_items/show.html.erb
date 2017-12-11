@@ -1,0 +1,9 @@
+<h2><%= @item.name %></h2>
+
+Description:
+<p><i><%= @item.description %></i></p>
+<br>
+<%= button_to 'Delete item', list_item_path(@item), method: :delete %>
+<br>
+<%= link_to 'Edit item', edit_list_item_path(@item) %>
+<br>

@@ -4,13 +4,11 @@ class ListItemsController < ApplicationController
   before_action :load_list_item, only: [:show, :edit, :update, :destroy]
 
   def new
-    @item = List_Item.new
-    # try:
-    # @item = ListItem.new
+    @item = ListItem.new
   end
 
   def create
-    @item = List_Item.new(create_params)
+    @item = ListItem.new(create_params)
     @item.user = current_user
 
     if @item.save
