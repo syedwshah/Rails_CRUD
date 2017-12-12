@@ -1,0 +1,15 @@
+<h2>Update List</h2>
+
+<%= form_for @item do |form| %>
+
+  <%= label_tag :name %>
+
+  <b><%= @item.name %></b>
+  <br>
+  <%= label_tag :description %>
+  <br>
+  <%= form.text_area :description, placeholder: 'Description' %>
+
+  <br>
+  <%= submit_tag 'Update list!' %>
+<% end %>
